@@ -1,3 +1,5 @@
+import Cartwidget from "./Cartwidget";
+
 const Navbar = () => {
     return (
         <header>
@@ -12,15 +14,17 @@ const Navbar = () => {
                 <h1 className="tituloPrincipal">FAG - Tienda Futbolera</h1>
                 </div>
 
-                <div>
+                <div className="contenedorNavegacion">
                     <ul className="navegacion">
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html">Remeras</a></li>
+                        <li><a href="index.html">Pantalones</a></li>
+                        <li><a href="index.html">Buzos</a></li>
+                        <li><a href="index.html">Camperas</a></li>
+                        <Cartwidget/>
                     </ul>
                 </div>
+                
             </nav>
         </header>
     )

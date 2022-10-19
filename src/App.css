@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/* NAVBAR */
+
 nav{
   display: flex;
   align-items: center;
@@ -42,4 +44,15 @@ nav{
 
 .navegacion li a:hover{
   color: #FF7A00;
+}
+
+.iconoCarrito{
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.bienvenidos{
+  text-align: center;
+  padding: 30px;
+  font-size: 40px;
 }

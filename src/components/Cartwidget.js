@@ -1,8 +1,6 @@
-import React from 'react'
-
 const Cartwidget = () => {
   return (
-    <div>Cartwidget</div>
+    <i className="fa-solid fa-cart-shopping iconoCarrito"></i>
   )
 }
 
