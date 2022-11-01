@@ -20,6 +20,10 @@ nav{
   gap: 20px;
 }
 
+.logo a{
+  text-decoration: none;
+}
+
 .tituloPrincipal{
   color: white;
 }
@@ -46,6 +50,11 @@ nav{
   color: #FF7A00;
 }
 
+.active{
+  border-bottom:#FF7A00 2px solid;
+  padding-bottom: 2px;
+}
+
 .iconoCarrito{
   color: #ffffff;
   font-size: 25px;
@@ -55,4 +64,100 @@ nav{
   text-align: center;
   padding: 30px;
   font-size: 40px;
+}
+
+.cantidad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.cantidad button{
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  background-color: #FF7A00;
+  border: 2px solid #3f3f3f;
+  color:#ffffff;
+  cursor: pointer;
+}
+
+.cantidad button:hover{
+  background-color: #ff912a;
+}
+
+.cantidad button:disabled{
+  background-color: #ebebeb;
+  color: #000000;
+  cursor: default;
+}
+
+.contenedorCantidad{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnAgregar{
+  font-size: 14px;
+  padding: 7px;
+  background-color: #0c0c0c;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnAgregar:hover{
+  background-color: #252525;
+}
+
+.btnAgregar:disabled{
+  background-color: #ebebeb;
+  color: #000000;
+  font-weight: 600;
+  border: 2px solid #3f3f3f;
+  cursor: default;
+}
+
+.listaProductos{
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.producto{
+  width: 330px;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.textnone{
+  text-decoration: none;
+  color: #000000;
+}
+
+.producto:hover{
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.4);
+}
+
+.producto img{
+  width: 330px;
+  height: 350px;
+}
+
+.producto article{
+  height: 1000px;
 }
