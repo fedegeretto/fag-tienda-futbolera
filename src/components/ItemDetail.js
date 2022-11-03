@@ -11,16 +11,19 @@ const ItemDetail = ({item}) => {
         }
     }
     return (
-    <div>
+    <div className='detail'>
         <img src={item.img} alt={item.title} />
-        <div>
+        <article>
             <h2>{item.title}</h2>
             <p>Lorem ipsum dolor sit, amet 
                 consectetur adipisicing elit. Iure, minus?Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Reiciendis, numquam?</p>
             <h3>$ {item.price}</h3>
-            <ItemCount stock={item.stock} initial={0} onAdd={onAdd}/>
-        </div>
+            <div>
+                <ItemCount stock={item.stock} initial={0} onAdd={onAdd}/>
+            </div>
+        </article>
+        
     </div>
     )
 }

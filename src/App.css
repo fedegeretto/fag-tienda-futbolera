@@ -99,7 +99,7 @@ nav{
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .btnAgregar{
@@ -160,4 +160,41 @@ nav{
 
 .producto article{
   height: 1000px;
+}
+
+.detailContainer{
+  background-color: rgb(248, 248, 248);
+  margin: 50px;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.detail{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;  
+}
+
+.detail img{
+  border-radius: 10px;
+  width: 500px;
+}
+
+.detail article{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail article h2{
+  font-size: 35px;
+}
+
+.detail article p{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.detail article h3{
+  font-size: 28px;
 }
