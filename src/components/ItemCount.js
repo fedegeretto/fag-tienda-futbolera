@@ -1,13 +1,14 @@
 import { useState } from "react"
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({stock, onAdd, initial = 0}) => {
 
   const [cantidad, setCantidad] = useState(initial)
 
   const sumar = () => {
-    if (cantidad < stock) {
-      setCantidad(cantidad + 1)
-    }
+    cantidad < stock && setCantidad(cantidad + 1);
+    // if (cantidad < stock) {
+    //   setCantidad(cantidad + 1)
+    // }
   }
 
   const restar = () => {
@@ -20,11 +21,11 @@ const ItemCount = ({stock, initial, onAdd}) => {
     <>
       <div className="contenedorCantidad">
         <div className="cantidad">
-          <button onClick={restar} disabled={cantidad === initial}>-</button>
+          <button onClick={restar} disabled={cantidad === 0}>-</button>
           <p>{cantidad}</p>
           <button onClick={sumar} disabled={cantidad === stock}>+</button>
         </div>
-        <button className="btnAgregar" disabled={cantidad === initial} onClick={() => onAdd(cantidad)}>Agregar al carrito</button>
+        <button className="btnAgregar" disabled={cantidad === 0} onClick={() => onAdd(cantidad)}>Agregar al carrito</button>
       </div> 
     </>
   )

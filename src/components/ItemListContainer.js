@@ -1,37 +1,59 @@
 import React, { useEffect, useState } from 'react'
-import { products } from '../mock/products'
+// import { products } from '../mock/products'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import GridLoader from "react-spinners/GridLoader";
+import { getDocs, query, where } from 'firebase/firestore';
+import { collectionProd } from '../services/firebaseConfig';
 
 
+// Clase 11 - Continuar en 28:10
 
 const ItemListContainer = ({greeting}) => {
 
   const [items, setItems] = useState([])
 
+  const [loading, setLoading] = useState(true)
+
   const {categoryName} = useParams()
 
   useEffect(() => {
-    const getProducts = () => {
+    
 
-      return new Promise((res,rej) => {
-        const prodFiltrados = products.filter((prod) => prod.category === categoryName)
-        const referenciaProductos = categoryName ? prodFiltrados : products;  
-        
-        setTimeout(() => {
-              res(referenciaProductos);
-          }, 2000);
+    const ref = categoryName ? query(collectionProd, where('category', '==', categoryName)) : collectionProd;
+
+    getDocs(ref)
+    .then((res)=>{
+      console.log(res.docs);
+      const products = res.docs.map((prod)=>{
+        console.log(prod);
+        console.log(prod.data());
+        return {
+          id: prod.id,
+          ...prod.data()
+        }
       })
-  }
-    getProducts()
-      .then((res) => {
-        setItems(res)
-        console.log("res", res);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+      setItems(products)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+    .finally(()=>{
+      setLoading(false);
+    })
+
+  return () => setLoading(true)
+
   }, [categoryName])
+
+
+  if (loading) {
+    return (
+      <div className='cargando'>
+        <GridLoader color='#FF7A00' size={25} />
+      </div>  
+    )
+  }
 
   return (
     <div>

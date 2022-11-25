@@ -3,12 +3,19 @@ import ItemListContainer from './components/ItemListContainer';
 import Navbar from './components/Navbar';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import Form from './components/Form/Form';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CartProvider from './context/CartContext';
+
+
 
 function App() {
+
+  // SEGUIR CLASE 10 - MINUTO 59:10
   
   return (
     <BrowserRouter>
+    <CartProvider>
       <Navbar/>
       <Routes>
         <Route 
@@ -26,7 +33,12 @@ function App() {
           path='/cart'
           element={<Cart/>}
         /> 
+        <Route
+          path='/checkout'
+          element={<Form/>}
+        /> 
       </Routes>  
+    </CartProvider> 
     </BrowserRouter>
 
   );
