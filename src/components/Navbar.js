@@ -5,14 +5,8 @@ import { useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../services/firebaseConfig";
 
-
-
-
-// SEGUIR CLASE 12 -- 32:29
-
 const Navbar = () => {
     const [categories, setCategories] = useState([]);
-
     useEffect(() => {
         const catCollection = collection(db, 'categorias');
         getDocs(catCollection)
@@ -58,16 +52,11 @@ const Navbar = () => {
                 ))}
                 <Link to="/cart"><Cartwidget/></Link>
             </ul>
-                     
-                     
-                     
-                     
-                 
-             </div>
+            </div>
                 
-         </nav>
-     </header>
- )
+        </nav>
+    </header>
+)
 }
 
 export default Navbar;
